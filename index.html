@@ -4,9 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roumaji Kana Converter</title>
-</head>
-<body>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>   
+<body class="m-0 p-3" style="color: #484543;">  
+    <main class="mx-auto p-lg-4" style="max-width: 1300px;"> 
+        <p class="copied-alert rounded position-fixed">copied to clipboard!</p>
+        <h1 style="border-bottom: 3px solid #fcc97c; color: #FF9900;">Roumaji Kana Converter</h1>
+        <p class="my-4">A tool to convert text from Japanese Kana to Latin alphabet (and vice versa).</p>
+       
+        <div class="d-flex flex-lg-row align-items-lg-start flex-column-reverse gap-4"> 
+          <section class="main-section align-self-lg-stretch bg-light border-1 border rounded d-flex flex-column justify-content-between"> 
+            <!-- tabs -->
+          <div class= "mx-2 mx-lg-4 my-5">  
+            <ul class="nav nav-tabs" id="tabs">
+                <li class="nav-item rounded-top bg-light">
+                    <a href="#to-kana" class="nav-link active focus-ring focus-ring-warning" style="color: #FF9900;" data-bs-toggle="tab">to kana</a>
+                </li>
+                <li class="nav-item rounded-top bg-light">
+                    <a href="#to-roman" class="nav-link focus-ring focus-ring-warning" style="color: #FF9900;" data-bs-toggle="tab">to roman</a>
+                </li>
+                <li class="nav-item rounded-top bg-light">
+                    <a href="#to-hiragana" class="nav-link focus-ring focus-ring-warning" style="color: #FF9900;" data-bs-toggle="tab">to hiragana</a>
+                </li>
+                <li class="nav-item rounded-top bg-light">
+                    <a href="#to-katakana" class="nav-link focus-ring focus-ring-warning" style="color: #FF9900;" data-bs-toggle="tab">to katakana</a>
+                </li>
+            </ul>
+
+            <div class="tab-content border border-top-0 border-1 rounded-bottom"> 
+                <div class="tab-pane fade show active bg-white p-3 rounded" id="to-kana">
+                    <h2 class="my-4">From romanized to Japanese</h2>
+                    <input class="w-100 p-1 border-0 border-bottom" type="text" name="roumaji-input" id="roumaji-input" placeholder="enter roumaji text">
+                    <p class="error-msg"></p>
+
+                    
+                    <div class="output my-5 flex-column gap-4"> 
+                        <div class="mb-4"> 
+                            <label for="hiragana-output">hiragana:</label>
+                            <input type="text" style="color: #FF9900;" class="output-text w-100 p-1 border-0 border-bottom" name="hiragana-output" id="hiragana-output" readonly>
+                        </div>
+
+                        <div>
+                            <label for="katakana-output ">katakana: </label>
+                            <input type="text" style="color: #FF9900;" class="output-text w-100 p-1 border-0 border-bottom" name="katakana-output" id="katakana-output" readonly>
+                        </div>
+                        <p class="small text-secondary">hint: click on text to copy to clipboard!</p>
+                     </div>
+                </div>
+
+                <div class="tab-pane fade bg-white p-3 rounded" id="to-roman">
+                    <h4 class="my-4">From Kana to Roumaji</h4>
+                    <input class="w-100 p-1 border-0 border-bottom mt-3" type="text" name="kana-input" id="kana-input" placeholder="enter kana text">
+                    <p class="error-msg"></p>
+
+                    <div class="output my-5">
+                        <label for="roumaji-output">roumaji:</label>
+                        <input type="text" style="color: #FF9900;" class="output-text output-text w-100 p-1 border-0 border-bottom" name="roumaji-output" id="roumaji-output" readonly>
+                    </div>
+                    <p class="small text-secondary">hint: click on text to copy to clipboard!</p>
+                </div>
+
+                <div class="tab-pane fade bg-white p-3 rounded" id="to-hiragana">
+                    <h4 class="my-4">From Katakana to Hiragana</h4>
+                    <input class="w-100 p-1 border-0 border-bottom mt-3" type="text" name="katakana-input" id="katakana-input" placeholder="enter katakana text">
+                    <p class="error-msg"></p>
+
+                    <div class="output my-5">
+                        <label for="hiragana-output-kana">hiragana: </label>
+                        <input type="text" style="color: #FF9900;" class="output-text w-100 p-1 border-0 border-bottom" name="hiragana-output-kana" id="hiragana-output-kana" readonly>
+                    </div>
+                    <p class="small text-secondary">hint: click on text to copy to clipboard!</p>
+                </div>
+
+                <div class="tab-pane fade bg-white p-3 rounded" id="to-katakana">
+                    <h4 class="my-4">From Hiragana to Katakana</h4>
+                    <input class="w-100 p-1 border-0 border-bottom mt-3" type="text" name="hiragana-input" id="hiragana-input" placeholder="enter hiragana text">
+                    <p class="error-msg"></p>
+            
+                    <div class="output my-5">
+                        <label for="katakana-output-kana">katakana: </label>
+                        <input type="text" style="color: #FF9900;" class="output-text w-100 p-1 border-0 border-bottom" name="katakana-output-kana" id="katakana-output-kana" readonly>
+                    </div>
+                    <p class="small text-secondary">hint: click on text to copy to clipboard!</p>
+                </div>
+            </div>
+        </div>
+        </section>
+       
+        <section class="notes-section rounded p-1" style="background-color: #FFF5E6;">
+            <h6 class="m-3">Notes and info</h6>
+            <p class="small text-secondary m-3">This converter was built without the use of a dictionary, parser, or grammar analyzer. As a result, it may be less accurate in cases where conversion depends on grammatical context. Please refer to the notes below for guidance on usage and limitations.</p>
+            <div class="accordion" id="notes-accordion">
+            <div class="accordion-item border-0 bg-transparent">
+                <h6 class="accordion-header">
+                    <button class="accordion-button bg-transparent focus-ring focus-ring-warning" style="color: #754600;" type="button" data-bs-toggle="collapse" data-bs-target="#grammar" aria-expanded="true" aria-controls="grammar">
+                        Grammar
+                    </button> 
+                </h6> 
+                <div id="grammar" class="accordion-collapse collapse" data-bs-parent="#notes-accordion"> 
+                    <div class="accordion-body">    
+                        <ul class="p-1 px-lg-2 small rounded" style="background-color: #FFF5E6;"> 
+                            <li class="mb-4">The particle は is romanized as "ha", even when pronounced "wa".</li>
+                            <li class="mb-4">The particle へ should be entered as "he", not "e".</li>
+                            <li class="mb-4">The particle を should be entered as "wo", not "o".</li>
+                            <li class="mb-4">Japanese text typically does not include spaces. Since the tool cannot recognize word boundaries, the romanized output will also omit spaces (unless provided in the kana input).</li>
+                            <li>Only valid Japanese syllables will be converted. For foreign words, the converter cannot automatically adapt them into appropriate Japanese phonetic equivalents. You’ll need to manually adjust the input to match valid syllables (e.g., use "Makudonarudo" for "McDonald's").</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 bg-transparent">
+                <h6 class="accordion-header">
+                    <button class="accordion-button bg-transparent focus-ring focus-ring-warning" style="color: #754600;" type="button" data-bs-toggle="collapse" data-bs-target="#to-kana-conversion" aria-expanded="true" aria-controls="to-kana-conversion">
+                        Roumaji to Kana Conversion
+                    </button> 
+                </h6>
+                <div id="to-kana-conversion" class="accordion-collapse collapse" data-bs-parent="#notes-accordion">
+                    <div class="accordion-body">
+                        <p>This tool supports both the Hepburn and Nihon-shiki romanization systems, with a few practical exceptions to reduce ambiguity:</p>
+                        <ul class="p-1 px-lg-2 small rounded" style="background-color: #FFF5E6;">
+                            <li class="mb-4">Use "ei" for long e sounds and "ou" for long o sounds.</li>
+                            <li class="mb-4">Other vowels are doubled: "aa", "ii", "uu".</li>
+                            <li class="mb-4">This avoids the need for macrons (e.g., ā, ī, ū, ē, ō), which are less convenient to type.</li>
+                            <li class="mb-4">じ / ジ is romanized as "ji", while ぢ / ヂ is romanized as "di".</li>
+                            <li>ず / ズ is romanized as "zu", while づ / ヅ is romanized as "du".</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 bg-transparent">
+                <h6 class="accordion-header">
+                    <button class="accordion-button bg-transparent focus-ring focus-ring-warning" style="color: #754600;" type="button" data-bs-toggle="collapse" data-bs-target="#to-roumaji-conversion" aria-expanded="true" aria-controls="to-roumaji-conversion">
+                        Kana-to-Romaji Conversion
+                    </button> 
+                </h6>
+                <div id="to-roumaji-conversion" class="accordion-collapse collapse" data-bs-parent="#notes-accordion">
+                    <div class="accordion-body">
+                        <p>The kana-to-romaji converter primarily uses the Hepburn system, with the same exceptions listed above to handle ambiguous cases consistently.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item border-0 bg-transparent">
+                <h6 class="accordion-header">
+                    <button class="accordion-button bg-transparent focus-ring focus-ring-warning" style="color: #754600;" type="button" data-bs-toggle="collapse" data-bs-target="#additional-features" aria-expanded="true" aria-controls="additional-features">
+                        Additional Features
+                    </button> 
+                </h6>
+                <div id="additional-features" class="accordion-collapse collapse" data-bs-parent="#notes-accordion">
+                    <div class="accordion-body">
+                        <p>The converter supports numerals and basic punctuation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </section>
     
-    <script type="module" src="./js/app.js"></script>
+        </div>
+          <p class="my-3 text-dark small px-lg-5 px-3 py-4 rounded" style="background-color: #FFF5E6;"> 
+            Disclaimer: This project was created as a JavaScript practice exercise, and does not claim to be a fully accurate linguistic tool. While I’ve made every effort to cover edge cases and build a complete solution using only internal logic, the converter remains a rudimentary implementation. It does not use external linguistic data, and may produce imperfect results—especially in contexts that require deeper grammatical or semantic analysis. 
+        </p>
+      
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
 </html>

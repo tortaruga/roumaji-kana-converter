@@ -1,0 +1,51 @@
+li::marker {
+    color: #ff9d00; 
+} 
+
+input:focus-visible {
+    outline-color: #ff9d00;
+}
+
+a:focus-visible, a:focus-within  {
+    outline: 2px solid #ff9d00; 
+}
+
+.copied-alert {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: #FFE7B8;
+    padding: .25rem .5rem;
+    opacity: 0;
+}
+
+*::selection {
+    background-color: #ff9d00;
+    color: white;
+}
+
+@keyframes copied-alert {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .main-section {
+        width: 75% !important;
+    }
+
+    .notes-section {
+        width: 25% !important;
+    }
+    
+}
